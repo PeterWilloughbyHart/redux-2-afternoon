@@ -3,7 +3,9 @@ const userData = require('./userData');
 module.exports = {
   login(req, res) {
     const { email, password } = req.body;
+    console.log(req.body)
     if (email === creds.email && password === creds.password) {
+      console.log("hit")
       req.session.user = userData;
       res.status(200).send({ loggedIn: true })
     } else {
